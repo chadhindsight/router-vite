@@ -1,3 +1,5 @@
+import { Outlet } from "react-router-dom";
+
 export default function Root() {
   return (
     <>
@@ -37,7 +39,10 @@ export default function Root() {
           </ul>
         </nav>
       </div>
-      <div id="detail"></div>
+      <div id="detail">
+        {/* An <Outlet> should be used in parent route elements to render their child route elements */}
+        <Outlet />
+      </div>
     </>
   );
 }
