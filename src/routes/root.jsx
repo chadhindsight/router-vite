@@ -1,3 +1,5 @@
+import { Link, Outlet } from "react-router-dom";
+
 export default function Root() {
   return (
     <>
@@ -29,15 +31,18 @@ export default function Root() {
         <nav>
           <ul>
             <li>
-              <a href={`/contacts/1`}>Your Name</a>
+              <Link href={`/contacts/1`}>Your Name</Link>
             </li>
             <li>
-              <a href={`/contacts/2`}>Your Friend</a>
+              <Link href={`/contacts/2`}>Your Friend</Link>
             </li>
           </ul>
         </nav>
       </div>
-      <div id="detail"></div>
+      <div id="detail">
+        {/* An <Outlet> should be used in parent route elements to render their child route elements */}
+        <Outlet />
+      </div>
     </>
   );
 }
